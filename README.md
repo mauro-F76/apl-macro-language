@@ -3,6 +3,10 @@
 Syntax highlighting for ATool Software PARTNER/ASPAN and TOOLCAM Macro and Post-Processor programming language (APL) `.mac`, `.pcs` files.<br />
 To execute APL Macros it is necessary a valid installation of PARTNER/ASPAN, TOOLCAM (with macro additional module) and MARS.
 
+NOTE:
+This is a personal project, to be considered as an unofficial extension and is not directly supported by ATool Software.
+
+
 Resources:<br />
 [APL Language Reference](https://www.maurofecarotta.it/vscode/extensions/resources/apl-language-ref.pdf)<br />
 [APL Macro Lessons](https://www.maurofecarotta.it/vscode/extensions/resources/apl-macro-lessons.pdf)<br />
