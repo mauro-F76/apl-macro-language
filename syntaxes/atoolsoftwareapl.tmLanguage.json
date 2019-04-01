@@ -1,0 +1,199 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "AToolSoftware APL Macro Language",
+	"patterns": [
+        {
+        "include": "#numeric-constant"
+        },
+        {
+        "include": "#boolean-constant"
+        },
+        {
+        "include": "#operators"
+        },
+        {
+        "include": "#round-brackets"
+        },
+        {
+        "include": "#print-line"
+        },
+        {
+        "include": "#function-declaration"
+        },
+        {
+        "include": "#expression-evaluation"
+        },
+        {
+            "name": "comment.block.atoolsoftwareapl",
+            "begin": "(\\#\\.*)",
+            "beginCaptures": {
+                "1": { "name": "comment.block.atoolsoftwareapl" }
+            },
+            "end": "\\n"
+        },
+        {
+            "begin": "(\\[\\.*)",
+            "beginCaptures": {
+                "1": { "name": "variable.parameter.atoolsoftwareapl" }
+            },
+            "contentName": "variable.parameter.atoolsoftwareapl",
+            "end": "\\]",
+            "name": "variable.parameter.atoolsoftwareapl"
+        },
+        {
+			"match": "(?i:(\\~(IF|ENDIF|ELSE|FOR|NEXT|EXIT_FOR|TO|DO.WHILE|DO|LOOP.UNTIL|LOOP|EXIT_LOOP)\\b))",
+            "name": "entity.name.function"
+		},
+		{
+			"match": "(?i:(\\~LET\\b))",
+			"name": "keyword.control.atoolsoftwareapl"
+		},
+        {
+            "name": "meta.field.atoolsoftwareapl",
+            "match": "(\\~\\w+)\\b",
+            "captures": {
+                "1":    { 
+                            "name": "storage.type.function.atoolsoftwareapl"
+                        }
+            }
+        }
+        
+    ],
+	"repository": {
+        "field": {
+            "patterns": [
+                { "include": "#comments" },
+                { "include": "#identifier" },
+                { "include": "#numeric-constant" },
+                {
+                    "begin": "=",
+                    "end": "$",
+                    "patterns": [
+                        { "include": "#boolean-constant" },
+                        { "include": "#numeric-constant" },
+                        { "include": "#comments" }
+                    ]
+                }
+            ]
+        },
+        "boolean-constant": {
+            "patterns": [
+                {   
+                    "match": "\\b(TRUE|FALSE)\\b",
+                    "name": "storage.type.atoolsoftwareapl"
+                }
+            ]
+        },
+        "numeric-constant": {
+            "patterns": [
+                {
+                    "match": "-?\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f)?\\b",
+                    "name": "invalid.illegal.atoolsoftwareapl"
+                }
+            ]
+        },
+        "operators": {
+            "patterns": [
+                {
+                    "match": "!=|<=|>=|==|<|>|=",
+                    "name": "keyword.control.atoolsoftwareapl"
+                },
+                {
+                    "match": "(?i:\\b(AND|OR|NOT|XOR|BOR|BAND|BXOR|BNOT)\\b)",
+                    "name": "entity.name.function.atoolsoftwareapl"
+                },
+                {
+                    "match": "&&|!|\\|\\||&|\\^",
+                    "name": "entity.name.function.atoolsoftwareapl"
+                },
+                {
+                    "match": "%|\\*|/|-|\\+|\\*\\*",
+                    "name": "keyword.control.atoolsoftwareapl"
+                },
+                {
+                    "match": "DX|DY|DZ|FLD",
+                    "name": "keyword.control.atoolsoftwareapl"
+                }
+            ]
+        },
+        "expression-evaluation": {
+            "begin": "(\\~\\(|\\~I\\()",
+			"beginCaptures": {
+				"0": {
+					"name": "keyword.control.atoolsoftwareapl"
+				}
+			},
+			"end": "\\)",
+			"endCaptures": {
+				"0": {
+					"name": "keyword.control.atoolsoftwareapl"
+				}
+			},
+			"patterns": [
+				{
+					"include": "source.apl"
+				},
+				{
+					"include": "#math-functions"
+				}
+			]
+        },
+        "math-functions": {
+            "patterns": [
+                {
+                    "match": "\\b(ABS|ACOS|ASIN|ATAN2|ATAN|COS|SIN|TAN|RD|RU|EXP|LN|LOG|SQR|SQRT|SHL|SHR|PI|MOD|>>|<<)\\b",
+                    "name": "keyword.control.atoolsoftwareapl"
+                }
+            ]
+        },
+        "round-brackets": {
+			"begin": "\\(",
+			"beginCaptures": {
+				"0": {
+					"name": "keyword.control.atoolsoftwareapl"
+				}
+			},
+			"end": "\\)",
+			"endCaptures": {
+				"0": {
+					"name": "keyword.control.atoolsoftwareapl"
+				}
+			},
+			"name": "meta.leading-space",
+			"patterns": [
+				{
+					"include": "source.apl"
+				}
+			]
+		},
+		"print-line": {
+            "patterns": [
+                {
+                    "match": "(?:\\~\\?.+)",
+                    "name": "string.quoted.atoolsoftwareapl"
+                }
+            ]
+		},
+		"function-declaration": {
+			"begin": "^((\\s*)(\\~START ).*)\\n",
+			"beginCaptures": {
+				"0": {
+					"name": "entity.name.function.atoolsoftwareapl"
+				}
+			},
+			"end": "^((\\s*)(\\~END))\\n",
+			"endCaptures": {
+				"0": {
+					"name": "entity.name.function.atoolsoftwareapl"
+				}
+			},
+			"name": "",
+			"patterns": [
+				{
+					"include": "source.apl"
+				}
+			]
+		}
+    },
+	"scopeName": "source.apl"
+}

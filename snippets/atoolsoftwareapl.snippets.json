@@ -1,0 +1,83 @@
+{
+	"Region Start": {
+		"prefix": "section",
+		"body": [
+			"# // ============================================================================ // #",
+			"# ",
+			"# ",
+			"#    Start Section:",
+			"#    T H I S   S E C T I O N   N A M E",
+			"# ",
+			"# ",
+			"# // ============================================================================ // #",
+			"###section (01) THIS SECTION NAME >>"
+		],
+		"description": "Folding Region Start"
+	},
+	"Region End": {
+		"prefix": "endsection",
+		"body": [
+			"###endsection THIS SECTION NAME <<",
+			"### End section ----------------------------------------------------------------- //"
+		],
+		"description": "Folding Region End"
+	},
+	"Insert Debug Message": {
+		"prefix": "debugmsg",
+		"body": [
+			"~MSGBOX(\"DEBUGMSG\",,\"Message\")"
+		],
+		"description": "Show a debug Message"
+	},
+	"Subroutine definition": {
+		"prefix": "~START",
+		"body": [
+			"#--------------------------------------------------------#",
+			"#                   ThisFunction Name                    #",
+			"#--------------------------------------------------------#",
+			"# ThisFunction description",
+			" ",
+			"~START ThisFunction",
+			"  # body",
+			"~END"
+		],
+		"description": "Subroutine definition"
+	},
+	"Conditional statement": {
+		"prefix": "~IF",
+		"body": [
+			"~IF ~I([VARNAME] = 1) = 1",
+			"~ELSE",
+			"~ENDIF"
+		],
+		"description": "IF statement structure"
+	},
+	"Loop statement (FOR)": {
+		"prefix": "~FOR",
+		"body": [
+			"~FOR [i] = 0 TO [qt] - 1",
+			"  # loop body",
+			"~LOOP"
+		],
+		"description": "Loop statement structure (FOR)"
+	},
+	"Loop statement (DO WHILE)": {
+		"prefix": "~DO WHILE",
+		"body": [
+			"~DO WHILE(~([ang] < 0) = 1)",
+			"  ~LET [ang] = ~([ang] + 360)",
+			"~LOOP"
+		],
+		"description": "Loop statement structure (DO WHILE)"
+	},
+	"Loop statement (LOOP UNTIL)": {
+		"prefix": "~DO",
+		"body": [
+			"~LET [i] = 1",
+			"~DO",
+			"  ~LET [i] = ~([i] - 1)",
+			"~LOOP UNTIL(~([i] != -1) = 1)"
+		],
+		"description": "Loop statement structure (LOOP UNTIL)"
+	}
+}

@@ -1,0 +1,46 @@
+{
+    "name": "apl-macro-language",
+    "displayName": "AtoolSoftware APL Macro Language",
+    "description": "Language support for AToolSoftware (PARTNER/ASPAN - TOOLCAM) Macro and Post-Processor language (APL)",
+    "version": "1.2.0",
+    "publisher": "MauroFecarotta",
+    "repository": {
+		"type": "git",
+		"url": "https://github.com/mauro-F76/apl-macro-language.git"
+	},
+    "icon": "images/apl-icon.png",
+    "engines": {
+        "vscode": "^1.30.0"
+    },
+    "scripts": {
+		"update-grammar": "node ../../build/npm/update-grammar.js"
+    },
+    "devDependencies": {
+		"typescript": "^3.1.4",
+		"vscode": "^1.1.25",
+		"tslint": "^5.8.0",
+		"@types/node": "^8.10.25",
+		"@types/mocha": "^2.2.42"
+	},
+    "categories": [
+        "Programming Languages"
+    ],
+	"license": "LICENSE.md",
+    "contributes": {
+        "languages": [{
+            "id": "atoolsoftwareapl",
+            "aliases": ["AToolSoftware APL Macro Language", "atoolsoftwareapl"],
+            "extensions": [".mac",".MAC",".pcs",".PCS"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "atoolsoftwareapl",
+            "scopeName": "source.apl",
+            "path": "./syntaxes/atoolsoftwareapl.tmLanguage.json"
+        }],
+		"snippets": [{
+			"language": "atoolsoftwareapl",
+			"path": "./snippets/atoolsoftwareapl.snippets.json"
+		}] 
+    }
+}
