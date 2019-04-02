@@ -1,9 +1,9 @@
 {
     "name": "apl-macro-language",
     "displayName": "AtoolSoftware APL Macro Language",
-    "description": "Language support for AToolSoftware (PARTNER/ASPAN - TOOLCAM) Macro and Post-Processor language (APL)",
+    "description": "Language support for AToolSoftware (PARTNER/ASPAN, TOOLCAM, MARS) Macro and Post-Processor language (APL)",
     "version": "1.2.0",
-    "publisher": "MauroFecarotta",
+    "publisher": "mauro-f76",
     "repository": {
 		"type": "git",
 		"url": "https://github.com/mauro-F76/apl-macro-language.git"
