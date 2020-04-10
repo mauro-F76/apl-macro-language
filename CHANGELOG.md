@@ -2,6 +2,14 @@
 All notable changes to the "apl-macro-language" extension will be documented in this file.
 
 
+## [1.2.2] - 2020.04.10
+
+### Added
+- added automatic indentation rules;
+
+### Changed
+- minor fixes;
+
 ## [1.2.0] - 2019.03.29
 
 ### Changed

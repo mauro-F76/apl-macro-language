@@ -31,5 +31,9 @@
 			"start": "^\\s*(\\~START)|^\\s*(###section)",
             "end": "^\\s*(\\~END)\\s*$|^\\s*(###endsection)" 
         }
+    },
+    "indentationRules": {
+        "increaseIndentPattern": "^\\s*(\\~START)|^\\s*(\\~IF)|^\\s*(\\~ELSE)|^\\s*(\\~FOR)|^\\s*(\\~DO)",
+        "decreaseIndentPattern": "^\\s*(\\~END)|^\\s*(\\~ENDIF)|^\\s*(\\~ELSE)|^\\s*(\\~NEXT)|^\\s*(\\~EXIT_FOR)|^\\s*(\\~LOOP)|^\\s*(\\~EXIT_LOOP)"
     }
 }

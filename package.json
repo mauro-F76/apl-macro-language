@@ -2,7 +2,7 @@
     "name": "apl-macro-language",
     "displayName": "AtoolSoftware APL Macro Language",
     "description": "Language support for AToolSoftware (PARTNER/ASPAN, TOOLCAM, MARS) Macro and Post-Processor language (APL)",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "publisher": "mauro-f76",
     "repository": {
 		"type": "git",

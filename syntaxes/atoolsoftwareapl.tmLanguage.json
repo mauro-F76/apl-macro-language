@@ -1,6 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "AToolSoftware APL Macro Language",
+    "name": "AToolSoftware APL Macro Language",
 	"patterns": [
         {
         "include": "#numeric-constant"
@@ -181,7 +181,7 @@
 					"name": "entity.name.function.atoolsoftwareapl"
 				}
 			},
-			"end": "^((\\s*)(\\~END))\\n",
+			"end": "^((\\s*)(\\~END))\\b",
 			"endCaptures": {
 				"0": {
 					"name": "entity.name.function.atoolsoftwareapl"

@@ -1,6 +1,6 @@
 {
 	"Region Start": {
-		"prefix": "section",
+		"prefix": [ "section", "~section", "startsection" ],
 		"body": [
 			"# // ============================================================================ // #",
 			"# ",
@@ -23,7 +23,7 @@
 		"description": "Folding Region End"
 	},
 	"Insert Debug Message": {
-		"prefix": "debugmsg",
+		"prefix": [ "debugmsg", "~debugmsg" ],
 		"body": [
 			"~MSGBOX(\"DEBUGMSG\",,\"Message\")"
 		],
